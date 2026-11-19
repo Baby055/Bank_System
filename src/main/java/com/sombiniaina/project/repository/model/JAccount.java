@@ -18,7 +18,7 @@ import java.util.UUID;
 @Builder
 public class JAccount {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @Enumerated(EnumType.STRING)

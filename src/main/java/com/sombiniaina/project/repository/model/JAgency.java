@@ -1,12 +1,10 @@
 package com.sombiniaina.project.repository.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -18,6 +16,7 @@ import java.util.UUID;
 @Builder
 public class JAgency {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
 
     @Column(nullable = false, unique = true)
@@ -37,4 +36,7 @@ public class JAgency {
     private String email;
 
     private boolean active;
+
+    @OneToMany(mappedBy = "agency")
+    private List<JEmployee> employees;
 }

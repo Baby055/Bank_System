@@ -1,6 +1,7 @@
 package com.sombiniaina.project.repository.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.UUID;
@@ -22,8 +23,10 @@ public class JCustomer {
     private JAppUser user;
 
     @Column(nullable = false)
+    @NotBlank
     private String firstName;
 
+    @NotBlank
     @Column(nullable = false)
     private String lastName;
 }

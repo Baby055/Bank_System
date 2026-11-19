@@ -17,6 +17,7 @@ import java.util.UUID;
 @Builder
 public class JAppUser {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private UUID id;
 
     @Email

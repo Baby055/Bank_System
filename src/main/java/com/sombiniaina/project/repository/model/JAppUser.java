@@ -20,12 +20,6 @@ public class JAppUser {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @NotBlank
-    private String firstName;
-
-    @NotBlank
-    private String lastName;
-
     @Email
     @NotBlank
     @Column(unique = true, nullable = false)

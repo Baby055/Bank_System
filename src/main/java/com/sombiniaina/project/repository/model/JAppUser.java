@@ -24,7 +24,7 @@ public class JAppUser {
   @Column(unique = true, nullable = false)
   private String email;
 
-  private String password;
+  private String password_hash;
 
   @Enumerated(EnumType.STRING)
   private Role role;

@@ -1,8 +1,8 @@
 package com.sombiniaina.project.model;
 
 public enum TransactionStatus {
-    PENDING,
-    COMPLETED,
-    FAILED,
-    CANCELLED
+  PENDING,
+  COMPLETED,
+  FAILED,
+  CANCELLED
 }

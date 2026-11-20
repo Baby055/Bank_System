@@ -4,10 +4,9 @@ import com.sombiniaina.project.model.AccountStatus;
 import com.sombiniaina.project.model.AccountType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.*;
-
 import java.math.BigDecimal;
 import java.util.UUID;
+import lombok.*;
 
 @Entity
 @Table(name = "account")
@@ -17,22 +16,21 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class JAccount {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
 
-    @Enumerated(EnumType.STRING)
-    private AccountType type;
+  @Enumerated(EnumType.STRING)
+  private AccountType type;
 
-    private BigDecimal balance;
+  private BigDecimal balance;
 
-    @NotBlank
-    private String currency;
+  @NotBlank private String currency;
 
-    @Enumerated(EnumType.STRING)
-    private AccountStatus status;
+  @Enumerated(EnumType.STRING)
+  private AccountStatus status;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "customer_id")
-    private JCustomer customer;
+  @ManyToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "customer_id")
+  private JCustomer customer;
 }

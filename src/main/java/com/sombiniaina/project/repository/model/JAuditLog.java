@@ -4,10 +4,9 @@ import com.sombiniaina.project.model.AuditAction;
 import com.sombiniaina.project.model.EntityType;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.*;
-
 import java.time.Instant;
 import java.util.UUID;
+import lombok.*;
 
 @Entity
 @Table(name = "audit_log")
@@ -17,23 +16,23 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class JAuditLog {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
 
-    private Instant createdAt;
+  private Instant createdAt;
 
-    private UUID actorId;
+  private UUID actorId;
 
-    @Email
-    @Column(nullable = false, unique = true)
-    private String actorEmail;
+  @Email
+  @Column(nullable = false, unique = true)
+  private String actorEmail;
 
-    @Enumerated(EnumType.STRING)
-    private AuditAction action;
+  @Enumerated(EnumType.STRING)
+  private AuditAction action;
 
-    @Enumerated(EnumType.STRING)
-    private EntityType entityType;
+  @Enumerated(EnumType.STRING)
+  private EntityType entityType;
 
-    private String details;
+  private String details;
 }

@@ -2,10 +2,9 @@ package com.sombiniaina.project.repository.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.*;
-
 import java.util.List;
 import java.util.UUID;
+import lombok.*;
 
 @Entity
 @Table(name = "agency")
@@ -15,28 +14,28 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class JAgency {
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private UUID id;
 
-    @Column(nullable = false, unique = true)
-    private String code;
+  @Column(nullable = false, unique = true)
+  private String code;
 
-    @Column(nullable = false, unique = true)
-    private  String name;
+  @Column(nullable = false, unique = true)
+  private String name;
 
-    @Column(nullable = false)
-    private String address;
+  @Column(nullable = false)
+  private String address;
 
-    @Column(nullable = false,  unique = true)
-    private String phone;
+  @Column(nullable = false, unique = true)
+  private String phone;
 
-    @Email
-    @Column(nullable = false,  unique = true)
-    private String email;
+  @Email
+  @Column(nullable = false, unique = true)
+  private String email;
 
-    private boolean active;
+  private boolean active;
 
-    @OneToMany(mappedBy = "agency")
-    private List<JEmployee> employees;
+  @OneToMany(mappedBy = "agency")
+  private List<JEmployee> employees;
 }

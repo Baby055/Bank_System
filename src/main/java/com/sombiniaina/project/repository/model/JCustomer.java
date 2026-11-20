@@ -2,9 +2,8 @@ package com.sombiniaina.project.repository.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.*;
-
 import java.util.UUID;
+import lombok.*;
 
 @Entity
 @Table(name = "customer")
@@ -14,19 +13,18 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 public class JCustomer {
-    @Id
-    private UUID id;
+  @Id private UUID id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @MapsId
-    @JoinColumn(name = "id")
-    private JAppUser user;
+  @OneToOne(fetch = FetchType.LAZY)
+  @MapsId
+  @JoinColumn(name = "id")
+  private JAppUser user;
 
-    @Column(nullable = false)
-    @NotBlank
-    private String firstName;
+  @Column(nullable = false)
+  @NotBlank
+  private String firstName;
 
-    @NotBlank
-    @Column(nullable = false)
-    private String lastName;
+  @NotBlank
+  @Column(nullable = false)
+  private String lastName;
 }

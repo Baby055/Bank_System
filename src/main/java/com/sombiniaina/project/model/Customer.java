@@ -1,8 +1,7 @@
 package com.sombiniaina.project.model;
 
-import lombok.Builder;
-
 import java.util.UUID;
+import lombok.Builder;
 
 @Builder
 public record Customer(UUID id, AppUser user, String firstName, String lastName) {}
